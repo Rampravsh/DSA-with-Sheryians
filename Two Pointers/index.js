@@ -77,25 +77,49 @@
 // relative order of odd or even integers does not matter .Return
 // any array that satisfies the condition.
 
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// function sortArrayByParity(arr) {
+//   let left = 0;
+//   let right = arr.length - 1;
+//   while (left < right) {
+//     if (arr[left] % 2 == 1 && arr[right] % 2 == 0) {
+//       [arr[left], arr[right]] = [arr[right], arr[left]];
+//       left++;
+//       right--;
+//     }
+//     if (arr[left] % 2 == 0) {
+//       left++;
+//     }
+//     if (arr[right] % 2 == 1) {
+//       right--;
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(sortArrayByParity(arr));
+
+//✅✅✅let do something crazy with order ko mentain rakte hue ise karte hai
+//isko karne ke lia hume extra space ki jaroot padega taki hum order ko mentain kar sake
+
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 function sortArrayByParity(arr) {
   let left = 0;
   let right = arr.length - 1;
-  while (left < right) {
-    if (arr[left] % 2 == 1 && arr[right] % 2 == 0) {
-      [arr[left], arr[right]] = [arr[right], arr[left]];
-      left++;
-      right--;
-    }
-    if (arr[left] % 2 == 0) {
+  let res = new Array(arr.length);
+  for (let i = 0, j = arr.length - 1; i < arr.length; i++, j--) {
+    if (arr[i] % 2 == 0) {
+      res[left] = arr[i];
       left++;
     }
-    if (arr[right] % 2 == 1) {
+    if (arr[j] % 2 == 1) {
+      res[right] = arr[j];
       right--;
     }
   }
-  return arr;
+  return res;
 }
 
 console.log(sortArrayByParity(arr));
