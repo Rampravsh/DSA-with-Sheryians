@@ -72,7 +72,7 @@
 
 // console.log(sortWithTwoPointer(arr));
 
-// Given an arry if integers 'a', move all the even integers at the
+//❓❓❓ Given an arry if integers 'a', move all the even integers at the
 // beginning of the array followed by all the odd integeres. The
 // relative order of odd or even integers does not matter .Return
 // any array that satisfies the condition.
@@ -103,23 +103,48 @@
 //✅✅✅let do something crazy with order ko mentain rakte hue ise karte hai
 //isko karne ke lia hume extra space ki jaroot padega taki hum order ko mentain kar sake
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-function sortArrayByParity(arr) {
+// function sortArrayByParity(arr) {
+//   let left = 0;
+//   let right = arr.length - 1;
+//   let res = new Array(arr.length);
+//   for (let i = 0, j = arr.length - 1; i < arr.length; i++, j--) {
+//     if (arr[i] % 2 == 0) {
+//       res[left] = arr[i];
+//       left++;
+//     }
+//     if (arr[j] % 2 == 1) {
+//       res[right] = arr[j];
+//       right--;
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(sortArrayByParity(arr));
+
+//❓❓❓Given an interger array'a' sorted in non - decreasing order ,return an array of the
+//squares of each number sorted in non-decreasing order
+
+let arr = [-10, -3, -2, 1, 4, 5];
+
+function sqOfArrayElement(arr) {
+  let n = arr.length;
   let left = 0;
-  let right = arr.length - 1;
-  let res = new Array(arr.length);
-  for (let i = 0, j = arr.length - 1; i < arr.length; i++, j--) {
-    if (arr[i] % 2 == 0) {
-      res[left] = arr[i];
+  let right = n - 1;
+  let ans = new Array(n);
+  let k = n - 1;
+  while (left <= right) {
+    if (Math.abs(arr[left]) > Math.abs(arr[right])) {
+      ans[k--] = arr[left] * arr[left];
       left++;
-    }
-    if (arr[j] % 2 == 1) {
-      res[right] = arr[j];
+    } else {
+      ans[k--] = arr[right] * arr[right];
       right--;
     }
   }
-  return res;
+  return ans;
 }
 
-console.log(sortArrayByParity(arr));
+console.log(sqOfArrayElement(arr));
