@@ -49,25 +49,53 @@
 //✅✅✅ ye third method hai jo ki two pointer pe hi base hai per hum isme
 //suru se hi dono pointer ko treverse krange
 
-let arr = [1, 0, 1, 0, 0, 1, 1, 0, 1];
+// let arr = [1, 0, 1, 0, 0, 1, 1, 0, 1];
 
-function sortWithTwoPointer(arr) {
-  let i = 0;
-  let j = 0;
-  while (i < arr.length) {
-    if (arr[i] == 0 && arr[j] == 1) {
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-      i++;
-      j++;
+// function sortWithTwoPointer(arr) {
+//   let i = 0;
+//   let j = 0;
+//   while (i < arr.length) {
+//     if (arr[i] == 0 && arr[j] == 1) {
+//       [arr[i], arr[j]] = [arr[j], arr[i]];
+//       i++;
+//       j++;
+//     }
+//     if (arr[i] == 1) {
+//       i++;
+//     }
+//     if (arr[j] == 0) {
+//       j++;
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(sortWithTwoPointer(arr));
+
+// Given an arry if integers 'a', move all the even integers at the
+// beginning of the array followed by all the odd integeres. The
+// relative order of odd or even integers does not matter .Return
+// any array that satisfies the condition.
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+function sortArrayByParity(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < right) {
+    if (arr[left] % 2 == 1 && arr[right] % 2 == 0) {
+      [arr[left], arr[right]] = [arr[right], arr[left]];
+      left++;
+      right--;
     }
-    if (arr[i] == 1) {
-      i++;
+    if (arr[left] % 2 == 0) {
+      left++;
     }
-    if (arr[j] == 0) {
-      j++;
+    if (arr[right] % 2 == 1) {
+      right--;
     }
   }
   return arr;
 }
 
-console.log(sortWithTwoPointer(arr));
+console.log(sortArrayByParity(arr));
