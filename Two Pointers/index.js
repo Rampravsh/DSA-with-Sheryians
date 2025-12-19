@@ -46,4 +46,28 @@
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 
-//✅✅✅
+//✅✅✅ ye third method hai jo ki two pointer pe hi base hai per hum isme
+//suru se hi dono pointer ko treverse krange
+
+let arr = [1, 0, 1, 0, 0, 1, 1, 0, 1];
+
+function sortWithTwoPointer(arr) {
+  let i = 0;
+  let j = 0;
+  while (i < arr.length) {
+    if (arr[i] == 0 && arr[j] == 1) {
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+      i++;
+      j++;
+    }
+    if (arr[i] == 1) {
+      i++;
+    }
+    if (arr[j] == 0) {
+      j++;
+    }
+  }
+  return arr;
+}
+
+console.log(sortWithTwoPointer(arr));
