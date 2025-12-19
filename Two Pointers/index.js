@@ -1,25 +1,28 @@
-// SORT AN ARRAY CONSISTING OF ONLY 0s AND 1s
+// ✅✅✅SORT AN ARRAY CONSISTING OF ONLY 0s AND 1s
 
-let arr = [1, 0, 1, 0, 0, 1, 1, 0, 1];
+// let arr = [1, 0, 1, 0, 0, 1, 1, 0, 1];
 
-let totalOfZeros = 0;
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] == 0) {
-    totalOfZeros++;
-  }
-}
+// let totalOfZeros = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] == 0) {
+//     totalOfZeros++;
+//   }
+// }
 
-for (let i = 0; i < arr.length; i++) {
-  if (i < totalOfZeros) {
-    arr[i] = 0;
-  } else {
-    arr[i] = 1;
-  }
-}
+// for (let i = 0; i < arr.length; i++) {
+//   if (i < totalOfZeros) {
+//     arr[i] = 0;
+//   } else {
+//     arr[i] = 1;
+//   }
+// }
 
-console.log(arr);
+// console.log(arr);
+// Method 1: Sort by Counting
+// Time Complexity: O(n)
+// Space Complexity: O(1)
 
-// WITH TWO POINTER METHOD
+// ✅✅✅WITH TWO POINTER METHOD
 
 // let left = 0;
 // let right = arr.length - 1;
@@ -38,3 +41,9 @@ console.log(arr);
 // }
 
 // console.log(arr);
+
+// Method 2: WITH TWO POINTER METHOD
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
+//✅✅✅
