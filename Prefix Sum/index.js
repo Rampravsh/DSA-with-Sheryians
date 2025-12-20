@@ -39,7 +39,7 @@ console.log(sumValueOf(2, 4)); */
 
 //class ke help se ise solve karte hai
 
-class rangeSum {
+/* class rangeSum {
   constructor(arr) {
     this.prefixSum = new Array(arr.length + 1).fill(0);
     for (let i = 0; i < arr.length; i++) {
@@ -55,4 +55,36 @@ let arr = [2, 3, 4, 2, 5, 1, 19];
 
 const sum = new rangeSum(arr);
 
-sum.getSum(1, 2);
+sum.getSum(1, 2); */
+
+//❓❓❓ Check if we can partition the array into two subarrays with equal sum.
+//  More formally, check that the prefix sum of a part of the array is equal to the suffix
+// sum of rest of the arry.
+
+let arr = [5, 3, 2, 6, 3, 1];
+function equalPartionOfSubarrays(arr) {
+  let prefixSum = new Array(arr.length);
+  let suffixSum = new Array(arr.length);
+  for (let i = 0, j = arr.length - 1; i < arr.length; i++, j--) {
+    if (i === 0) {
+      prefixSum[i] = arr[i];
+    } else {
+      prefixSum[i] = arr[i] + prefixSum[i - 1];
+    }
+    if (j === arr.length - 1) {
+      suffixSum[j] = arr[j];
+    } else {
+      suffixSum[j] = arr[j] + suffixSum[j + 1];
+    }
+  }
+
+  console.log(prefixSum);
+  console.log(suffixSum);
+  for (let i = 0; i < arr.length; i++) {
+    if (prefixSum[i] === suffixSum[i + 1]) {
+      return i;
+    }
+  }
+}
+
+console.log(equalPartionOfSubarrays(arr));
