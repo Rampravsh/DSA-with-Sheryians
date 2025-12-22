@@ -72,17 +72,38 @@
 
 // Q.frequency of each character
 
+// this logic give you a shorted res
+// let s = "Rampravesh Kumar";
+// let res = {};
+// let arr = new Array(128).fill(0);
+// for (let i = 0; i < s.length; i++) {
+//   let indx = s.charCodeAt(i);
+//   arr[indx] = arr[indx] + 1;
+// }
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > 0) {
+//     res = { ...res, [String.fromCharCode(i)]: arr[i] };
+//   }
+// }
+// console.log(res);
+
 let s = "Rampravesh Kumar";
-let res = {};
 let arr = new Array(128).fill(0);
+
 for (let i = 0; i < s.length; i++) {
-  let indx = s.charCodeAt(i);
+  indx = s.charCodeAt(i);
   arr[indx] = arr[indx] + 1;
 }
 
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > 0) {
-    res = { ...res, [String.fromCharCode(i)]: arr[i] };
+let res = {};
+for (let i = 0; i < s.length; i++) {
+  let char = s[i];
+  let charCode = s.charCodeAt(i);
+  if (res[char] === undefined) {
+    let count = arr[charCode];
+    res[char] = count;
   }
 }
+
 console.log(res);
