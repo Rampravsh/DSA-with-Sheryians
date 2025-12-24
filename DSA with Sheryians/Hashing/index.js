@@ -34,23 +34,36 @@
 // Given a string sentence containing only lowercase English latters ,
 // return true if sentence is a pangram or false otherwise
 
-let sentence = "thequickbrownfoxjumpsoverthelazydo";
+// let sentence = "thequickbrownfoxjumpsoverthelazydo";
 
-const checkIfPangram = function (sentence) {
-  let set = new Set();
-  for (let i = 0; i < sentence.length; i++) {
-    let code = sentence.charCodeAt(i);
-    set.add(code);
-  }
-  //   for (let i = 97; i <= 122; i++) {
-  //     if (!set.has(i)) {
-  //       return false;
-  //     }
-  //   }
-  if (set.size !== 26) {
-    return false;
-  }
-  return true;
-};
+// const checkIfPangram = function (sentence) {
+//   let set = new Set();
+//   for (let i = 0; i < sentence.length; i++) {
+//     let code = sentence.charCodeAt(i);
+//     set.add(code);
+//   }
+//   //   for (let i = 97; i <= 122; i++) {
+//   //     if (!set.has(i)) {
+//   //       return false;
+//   //     }
+//   //   }
+//   if (set.size !== 26) {
+//     return false;
+//   }
+//   return true;
+// };
 
-console.log(checkIfPangram(sentence));
+// console.log(checkIfPangram(sentence));
+
+// map ke bare me yaha se suru ho raha hai
+// map ko aese hi define karte abhi to yahi pta bad me pta chala to update kar dunga
+
+let map = new Map();
+
+map.set("name", "rampravesh");
+map.set("age", 19);
+map.set("isPassed", true);
+map.set("contact", [9084237897, 32984798]);
+console.log(map);
+
+// Q. Print the frequency of each number
