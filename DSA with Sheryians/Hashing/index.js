@@ -80,16 +80,35 @@
 
 // Q. Print the frequency of each number
 
-let arr = [13, 34, 4, 5, 5, 6, 322, 54, 6, 6, 34, 2, 45, 65];
-let map = new Map();
-for (let i = 0; i < arr.length; i++) {
-  //   if (map.has(arr[i])) {
-  //     map.set(arr[i], map.get(arr[i]) + 1);
-  //   } else {
-  //     map.set(arr[i], 1);
-  //   }
+// let arr = [13, 34, 4, 5, 5, 6, 322, 54, 6, 6, 34, 2, 45, 65];
+// let map = new Map();
+// for (let i = 0; i < arr.length; i++) {
+//   //   if (map.has(arr[i])) {
+//   //     map.set(arr[i], map.get(arr[i]) + 1);
+//   //   } else {
+//   //     map.set(arr[i], 1);
+//   //   }
 
-  map.set(arr[i], (map.get(arr[i]) || 0) + 1);
-}
+//   map.set(arr[i], (map.get(arr[i]) || 0) + 1);
+// }
 
-console.log(map);
+// console.log(map);
+
+// Q. 2418 leetcode problem Sort the people
+
+const sortPeople = function (names, heights) {
+  let map = new Map();
+  for (let i = 0; i < names.length; i++) {
+    map.set(heights[i], names[i]);
+  }
+  heights.sort((a, b) => b - a);
+  for (let i = 0; i < heights.length; i++) {
+    names[i] = map.get(heights[i]);
+  }
+  return names;
+};
+
+let names = ["marry", "john", "Emma"];
+let heights = [180, 165, 170];
+
+console.log(sortPeople(names, heights));
